@@ -1,21 +1,19 @@
 # vue-keyboard-widget
 
-> A Vue.js project
+依赖
+- Vue 2
+- Vuex
+- ['vue-touch-keyboard'](https://github.com/icebob/vue-touch-keyboard)
 
-## Build Setup
+在使用时发现`vue-touch-keyboard`只支持原生input，对于ElementUI封装后的el-input无法进行绑定，于是为了方便开发，自己写了两个组件分别对el-input和`vue-touch-keyboard`进行了封装，并结合了vuex实现任意组件内对keyboard的调用
 
-``` bash
-# install dependencies
-npm install
+### Store
+利用vuex存放
+- showKeyboard： 键盘显示状态 true-显示 false-隐藏
+- inputTarget： input的事件对象
 
-# serve with hot reload at localhost:8080
-npm run dev
+### MyInputWidget
+包含了原生input和textarea，注册为全局组件方便调用，在focus时会触发事件，调用方法修改store中的数据
 
-# build for production with minification
-npm run build
-
-# build for production and view the bundle analyzer report
-npm run build --report
-```
-
-For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+### TouchKeyboard
+注册在app根文件，通过监听store中的数据来控制键盘显示/隐藏，并且自己添加了pc/移动端的拖拽
