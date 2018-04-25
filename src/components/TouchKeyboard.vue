@@ -60,8 +60,7 @@
         };
       },
       show () {
-        let keyboard = localStorage.getItem('keyboard') || 'on';
-        if (this.showKeyboard && this.inputTarget && keyboard === 'on') {
+        if (this.showKeyboard && this.inputTarget) {
           this.input = this.inputTarget;
           this.layout = this.inputTarget.dataset.layout;
           this.visible = true
