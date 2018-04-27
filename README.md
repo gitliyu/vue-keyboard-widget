@@ -1,9 +1,9 @@
 # vue-keyboard-widget
 
-依赖
+基于['vue-touch-keyboard'](https://github.com/icebob/vue-touch-keyboard)的封装，依赖
 - Vue 2
 - Vuex
-- ['vue-touch-keyboard'](https://github.com/icebob/vue-touch-keyboard)
+- vue-touch-keyboard
 
 在使用时发现`vue-touch-keyboard`只支持原生input，对于ElementUI封装后的el-input无法进行绑定，于是为了方便开发，自己写了两个组件分别对el-input和`vue-touch-keyboard`进行了封装，并结合了vuex实现任意组件内对keyboard的调用
 
@@ -17,3 +17,4 @@
 
 ### TouchKeyboard
 注册在app根文件，通过监听store中的数据来控制键盘显示/隐藏，并且自己添加了pc/移动端的拖拽
+> 这里有一个坑，`vue-touch-keyboard`组件无法触发v-model，只能改变input内的值，需要手动绑定change事件 
