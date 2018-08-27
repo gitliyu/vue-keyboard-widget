@@ -1,5 +1,7 @@
 # vue-keyboard-widget
 
+Demo: ['https://www.liyu.fun/vue-keyboard-widget'](https://www.liyu.fun/vue-keyboard-widget)
+
 基于['vue-touch-keyboard'](https://github.com/icebob/vue-touch-keyboard)的封装，依赖
 - Vue 2
 - Vuex
